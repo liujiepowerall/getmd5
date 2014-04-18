@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.math.BigInteger;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
-import org.apache.cordova.api.PluginResult;
+import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,7 +26,7 @@ public class GetMd5Plugin extends CordovaPlugin {
 	        android.util.Log.d(TAG,"action=>"+action);
 	        PluginResult result = null;  
 	        
-			if (action.equals("get")) {
+			if (action.equals("getmd5")) {
 				callbackContext.success();
 				String md5 = getFileMD5(args.getString(0));
 				android.util.Log.d(TAG,"md5=>"+md5);

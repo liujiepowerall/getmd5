@@ -12,7 +12,7 @@
 	<keywords>powerall,getmd5,powerall</keywords>
 	
 	<js-module src="www/getmd5.js" name="GetMd5">
-		<clobbers target="getmd5" />
+		<clobbers target="md5" />
 	</js-module>
 
     <!-- android -->

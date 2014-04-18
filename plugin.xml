@@ -19,7 +19,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="GetMd5Plugin">
-                <param name="android-package" value="com.powerall.plugin.video.GetMd5Plugin"/>
+                <param name="android-package" value="com.powerall.plugin.md5.GetMd5Plugin"/>
             </feature>
         </config-file>
 

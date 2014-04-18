@@ -4,11 +4,11 @@ var cordova = require('cordova'),
 var GetMd5 = function() {
 
 };
-GetMd5.prototype.getmd5 = function(url)
+GetMd5.prototype.getmd5 = function(success,failed,url)
 {
-    exec(null, null, 'GetMd5Plugin', 'getmd5', [url]);
+    exec(success, failed, 'GetMd5Plugin', 'getmd5', [url]);
 };
 
-var getmd5 = new GetMd5();
+var md5 = new GetMd5();
 
 module.exports = getmd5;

@@ -13,7 +13,9 @@ import org.json.JSONObject;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.util.Log;
 import java.security.MessageDigest;
 
@@ -39,9 +41,26 @@ public class GetMd5Plugin extends CordovaPlugin {
 	    }
 	        return false;
 	}
-
+	
+	private File getFile(Uri contentUri){
+		String res = null;
+		File file = null;
+		String[] proj = {MediaStore.Images.Media.DATA };
+		Cursor cursor = this.cordova.getActivity().getContentResolver().query(contentUri, proj, null, null, null);
+		if(cursor.moveToFirst()){;
+		   int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+		   res = cursor.getString(column_index);
+		   Log.d(TAG,"res=>"+res);
+		   file = new File(res);
+		}
+		cursor.close();
+		return file;
+	}
+	
+	
 	 public String getFileMD5(String filePath) {
-			File file = new File(filePath);
+			Log.d(TAG,"filePath=>"+filePath);
+			File file = getFile(Uri.parse(filePath));
 		   if (!file.isFile()) {
 				Log.d(TAG,"the file is not file");
 				return null;

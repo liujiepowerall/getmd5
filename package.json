@@ -1,0 +1,13 @@
+{
+    "version": "0.0.1",
+    "name": "com.powerall.plugin.getmd5",
+    "cordova_name": "GetMd5",
+    "description": "getmd5 plugin description",
+    "license": "Apache 2.0",
+    "keywords": [
+        "powerall",
+        "getmd5",
+        "liujie"
+    ],
+    "engines": []
+}

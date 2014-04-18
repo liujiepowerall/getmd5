@@ -11,4 +11,4 @@ GetMd5.prototype.getmd5 = function(success,failed,url)
 
 var md5 = new GetMd5();
 
-module.exports = getmd5;
+module.exports = md5;
